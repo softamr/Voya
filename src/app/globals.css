@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-pt-sans), sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* Softer white background */
+    --foreground: 220 13% 18%; /* Rich dark blue-grey */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 217 91% 60%; /* Modern vibrant blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%; /* Subtle blue-grey */
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 142 76% 36%; /* Modern emerald green */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --chart-1: 217 91% 60%; /* Primary blue */
+    --chart-2: 142 76% 36%; /* Emerald green */
+    --chart-3: 262 83% 58%; /* Purple */
+    --chart-4: 25 95% 53%; /* Orange */
+    --chart-5: 346 87% 43%; /* Pink */
+    --radius: 0.75rem; /* Slightly more rounded */
+
+    /* Enhanced sidebar colors */
+    --sidebar-background: 220 26% 14%; /* Dark blue-grey */
+    --sidebar-foreground: 220 9% 89%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 26% 18%;
+    --sidebar-accent-foreground: 220 9% 89%;
+    --sidebar-border: 220 26% 18%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* New gradient variables for modern effects */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220 26% 14%) 0%, hsl(220 26% 18%) 100%);
+  }
+
+  .dark {
+    --background: 220 26% 8%;
+    --foreground: 220 9% 89%;
+
+    --card: 220 26% 10%;
+    --card-foreground: 220 9% 89%;
+
+    --popover: 220 26% 10%;
+    --popover-foreground: 220 9% 89%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 26% 8%;
+
+    --secondary: 220 26% 14%;
+    --secondary-foreground: 220 9% 89%;
+
+    --muted: 220 26% 14%;
+    --muted-foreground: 220 8.9% 56.1%;
+
+    --accent: 142 76% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 26% 18%;
+    --input: 220 26% 18%;
+    --ring: 217 91% 65%;
+
+    --chart-1: 217 91% 65%;
+    --chart-2: 142 76% 40%;
+    --chart-3: 262 83% 63%;
+    --chart-4: 25 95% 58%;
+    --chart-5: 346 87% 48%;
+
+    /* Enhanced dark sidebar */
+    --sidebar-background: 220 26% 6%;
+    --sidebar-foreground: 220 9% 89%;
+    --sidebar-primary: 217 91% 65%;
+    --sidebar-primary-foreground: 220 26% 6%;
+    --sidebar-accent: 220 26% 12%;
+    --sidebar-accent-foreground: 220 9% 89%;
+    --sidebar-border: 220 26% 12%;
+    --sidebar-ring: 217 91% 65%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%) 0%, hsl(262 83% 63%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 40%) 0%, hsl(25 95% 58%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(220 26% 6%) 0%, hsl(220 26% 12%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer components {
+  /* Modern gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  /* Enhanced card styles */
+  .card-modern {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-card via-card/95 to-card/90 border border-border/30 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Modern button styles */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-primary-foreground font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+
+  /* Animated gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+
+  /* Modern shadows */
+  .shadow-modern {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-modern-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+}
